@@ -1,18 +1,17 @@
+`timescale 1ns / 100ps
 
 module testbench(
-
     );
     reg clk;
-    wire new_clk;
-    
-    clk_divider uut (
+    wire new_clk1;
+    ClkDiv uut(
         .clk(clk),
-        .new_clk(new_clk)
+        .new_clk(new_clk1)
         );
-     initial begin
+    initial begin
         clk = 0;
-        #1000000 $finish;
-    end
-
-    always #5 clk = ~clk;
+        #2147483647 $finish;
+   end
+   
+   always #1 clk = ~clk;
 endmodule
