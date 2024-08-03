@@ -38,19 +38,19 @@ module RGB_colours(
         $readmemh("C:/Users/sarve/Downloads/output_hex_array_G.hex", green1);
         $readmemh("C:/Users/sarve/Downloads/output_hex_array_B.hex", blue1);
         $readmemh("C:/Users/sarve/Downloads/output_hex_array_R.hex", red1);
-        i <= 0;
-        j <= 0;
+        i = 0;
+        j = 0;
         end
         always @(posedge clk) begin
         if (count_rgb < 800 && reset_count_rgb < 600) begin
             red2 <= red1[i][j];
             green2 <= green1[i][j];
             blue2 <= blue1[i][j];
-            i <= i + 1;
+            i = i + 1;
         end
         else if (count_rgb == 1040) begin
-            j <= j + 1;
-            i <= 10'd0;
+            j = j + 1;
+            i = 10'd0;
         end
         else begin
             red2 <= 8'd0;
