@@ -68,9 +68,9 @@ module h_sync(
         .clk(new_clk),
         .reset_count_rgb(reset_count),
         .count_rgb(count),
-        .red2(red),
-        .green2(green),
-        .blue2(blue)
+        .red_1(red),
+        .green_1(green),
+        .blue_1(blue)
     );
     always @(posedge new_clk) begin
             if (red < 8'd33) begin
