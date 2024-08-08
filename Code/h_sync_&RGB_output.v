@@ -22,9 +22,6 @@
 
 module h_sync(
     input clk,
-    input wire [7:0] red,
-    input wire [7:0] green,
-    input wire [7:0] blue,
     output reg h_sync_in,
     output reg v_sync_in,
     output reg [9:0] reset_count,
@@ -34,6 +31,7 @@ module h_sync(
     output reg [1:0] blue_port
     );
     reg new_clk;
+    wire [7:0] red, green, blue;
     initial begin
         reset_count <= 0;
         count <= 0;
