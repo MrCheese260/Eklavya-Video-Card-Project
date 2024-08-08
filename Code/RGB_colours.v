@@ -58,21 +58,21 @@ module RGB_colours(
             i = i + 1;
         end
         
-        else if(count_rgb < 800 && reset_count_rgb < 300 && reset_count_rgb >150) begin //Quad 2
+        else if(count_rgb < 800 && reset_count_rgb < 300 && reset_count_rgb > 150) begin //Slice 2
             red_1 <= red2[i][j];
             green_1 <= green2[i][j];
             blue_1 <= blue2[i][j];
             i = i + 1;
         end
         
-        else if (count_rgb < 800 && reset_count_rgb < 450 && reset_count_rgb >300) begin //Quad 3
+        else if (count_rgb < 800 && reset_count_rgb < 450 && reset_count_rgb >300) begin //Slice 3
             red_1 <= red3[i][j];
             green_1 <= green3[i][j];
             blue_1 <= blue3[i][j];
             i = i + 1;
         end
         
-        else if (count_rgb < 800 && reset_count_rgb < 600 && reset_count_rgb >450) begin //Quad 4
+        else if (count_rgb < 800 && reset_count_rgb < 600 && reset_count_rgb >450) begin //Slice 4
             red_1 <= red4[i][j];
             green_1 <= green4[i][j];
             blue_1 <= blue4[i][j];
@@ -80,7 +80,12 @@ module RGB_colours(
         end
         
         else if (count_rgb == 1040) begin
-            j = j + 1;
+                if (j == 149) begin
+                    j <= 0;
+                end
+                else begin
+                     j = j + 1;
+                end
             i = 10'd0;
         end
         else begin
