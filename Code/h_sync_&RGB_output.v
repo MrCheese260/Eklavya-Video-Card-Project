@@ -1,26 +1,5 @@
 `timescale 1us/1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 16.07.2024 12:45:23
-// Design Name: 
-// Module Name: h_sync
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
-module h_sync(
+module tester(
     input clk,
     output reg h_sync_in,
     output reg v_sync_in,
@@ -55,21 +34,24 @@ module h_sync(
                 reset_count <= reset_count + 1;
                  case(reset_count)
                         637: v_sync_in <= 0;                            
-                        643: v_sync_in <= 1;  
-                        666: reset_count <= 0; 
+                        643: v_sync_in <= 1;
+                        666: begin 
+                            reset_count <= 0;
+                            end
                   endcase
               end    
-        endcase        
+        endcase
+          
     end
     
-    RGB_colours x1 (
+    rgb_tester x1 (
         .clk(new_clk),
         .reset_count_rgb(reset_count),
         .count_rgb(count),
         .red_1(red),
         .green_1(green),
         .blue_1(blue)
-    );
+   );
     always @(posedge new_clk) begin
             if (red < 8'd33) begin
                 red_port <= 2'b00;
