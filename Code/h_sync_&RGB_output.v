@@ -1,4 +1,25 @@
 `timescale 1us/1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 16.07.2024 12:45:23
+// Design Name: 
+// Module Name: h_sync
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
 module tester(
     input clk,
     output reg h_sync_in,
@@ -10,8 +31,10 @@ module tester(
     output reg [1:0] blue_port
     );
     reg new_clk;
+    reg [2:0] temp;
     wire [7:0] red, green, blue;
     initial begin
+        temp <= 0;
         reset_count <= 0;
         count <= 0;
         h_sync_in <= 1;
@@ -20,22 +43,26 @@ module tester(
     end 
     
     always @(posedge clk) begin
+      temp <= temp + 2'd1;
+       if(temp == 2'd3)begin
         new_clk <= ~new_clk;
+        temp <= 0;
+        end
      end
           
     always @(posedge new_clk) begin
        count <= count + 1;
         case (count)
-        800: h_sync_in <= 1;
-        856: h_sync_in <= 0;
-        976: h_sync_in <= 1;
-        1040: begin
+        200: h_sync_in <= 1;
+        214: h_sync_in <= 0;
+        244: h_sync_in <= 1;
+        260: begin
                 count <= 0;
                 reset_count <= reset_count + 1;
                  case(reset_count)
-                        637: v_sync_in <= 0;                            
-                        643: v_sync_in <= 1;
-                        666: begin 
+                        159: v_sync_in <= 0;                            
+                        161: v_sync_in <= 1;
+                        167: begin 
                             reset_count <= 0;
                             end
                   endcase
