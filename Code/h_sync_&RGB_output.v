@@ -5,9 +5,9 @@ module top(
     output reg v_sync_in,
     output reg [9:0] reset_count,
     output reg [10:0] count,
-    output reg [1:0] red_out,
-    output reg [1:0] green_out,
-    output reg [1:0] blue_out
+    output wire [1:0] red_out,
+    output wire [1:0] green_out,
+    output wire [1:0] blue_out
     );
   reg new_clk;
     initial begin
@@ -45,6 +45,7 @@ module top(
     end
     
    hex_loader x1 (
+        .clk_fast(clk),
         .clk(new_clk),
         .reset_count_rgb(reset_count),
         .count_rgb(count),
