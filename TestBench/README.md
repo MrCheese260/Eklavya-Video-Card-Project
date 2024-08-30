@@ -1,14 +1,4 @@
 # Video Card on FPGA report
-<style>
-        a.scroll-link {
-            text-decoration: none; /* Remove underline */
-            color: inherit; /* Inherit the color of surrounding text */
-            cursor: pointer; /* Show pointer cursor to indicate it's clickable */
-        }
-         a.scroll-link:visited {
-            color: black; /* Keep the color black for visited links */
-        }
-</style>
 ## Introduction
 This project focuses on the design and implementation of a video card using FPGA technology, capable of displaying images with up to 64 colors through an analog VGA interface. Unlike traditional video cards, which rely on proprietary designs, this project leverages the flexibility and power of FPGA-based development. The project highlights how FPGAs can be employed to create custom hardware solutions for video processing and display.
 
@@ -33,16 +23,16 @@ The SRA-VJTI community provided a solid foundation for learning and problem-solv
  1. Workflow of project
  2. Image Processing
     <ol style="list-style-type: none;">
-                <li>2.1 Image Processing and Color Conversion</li>
-                <li>2.2 COE File Generation</li>
-                <li>2.3 Merging COE Files</li>
-                <li>2.4 File Cleanup</li>
+                <li> Image Processing and Color Conversion</li>
+                <li> COE File Generation</li>
+                <li> Merging COE Files</li>
+                <li> File Cleanup</li>
             </ol>
  3. Verilog Code Overview
     <ol style="list-style-type: none;">
-                <li>3.1 Top Module(top.v)</li>
-                <li>3.2 Binary Loader(binary_loader.v)</li>
-                <li>3.3 Memory Modules</li>
+                <li> Top Module(top.v)</li>
+                <li> Binary Loader(binary_loader.v)</li>
+                <li> Memory Modules</li>
             </ol>
  4. Conclusion
 
