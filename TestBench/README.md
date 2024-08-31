@@ -20,7 +20,7 @@ Our mentors, Saish Karole and Atharv Patil, were crucial in guiding us through t
 The SRA-VJTI community provided a solid foundation for learning and problem-solving. Regular meetings and discussions with our mentors kept us on track and addressed any issues promptly. Additionally, we utilized Ben Eater's video as a valuable reference to guide our design and implementation.
 
 ## Contents
- 1. <a href="#workflow">Workflow of project</a>
+ 1. <a href="#workflow">Workflow</a>
  2. <a href="#basics">Basics of the project</a>
     <ol style="list-style-type: none;">
     <li><a href="#fpgas"> What are FPGAs?</a></li>
