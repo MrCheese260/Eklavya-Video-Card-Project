@@ -7,7 +7,7 @@ This project focuses on the design and implementation of a video card using FPGA
 
 This project involves the development of a custom video card on the Arty A7 35T FPGA board, designed to output images with a 64-color palette through an analog VGA interface. The FPGA is programmed using AMD Xilinx Vivado software.
 
-The input images provided to the video card are originally 400x300 in resolution since the video card supports only that big of a resolution, but we interpolate the images using nearest neighbour interpolation to 800x600 resolution.The images are converted into 2-bit COE files, which are stored in the 1800 Kbit memory present on the FPGA. These files serve as the source for storing RGB values of pixels, which are then output to a display. The 64-color variety is achieved by using resistors.There are 4 intensity levels for each: Red green and blue which allowes a range of colors to be displayed on the screen.
+The input images provided to the video card are originally 400x300 in resolution since the FPGA we have used has memory constraints, we interpolate the images using nearest neighbour interpolation from 400x300 to 800x600 resolution.The images are converted into 2-bit COE files, which are stored in the 1800 Kbit memory present on the FPGA. These files serve as the source for storing RGB values of pixels, which are then output to a display. The 64-color variety is achieved by using resistors.There are 4 intensity levels for each: Red green and blue which allowes a range of colors to be displayed on the screen.
 
 The development of this project was supported by resources like the HDLbits website, the NANDLAND YouTube channel, and Chip Verify for learning Verilog. We were inspired to create this projet from Ben Eater's video, "The World's Worst Video Card."
 
@@ -26,6 +26,7 @@ The SRA-VJTI community provided a solid foundation for learning and problem-solv
     <li><a href="#fpgas"> What are FPGAs?</a></li>
     <li><a href="#why-fpgas"> So, why FPGAs?</a></li>
     <li><a href="#vga-interface"> What is a VGA interface</a></li>
+    <li><a href="#resistor-combination"> Resistor combinations</a></li>
             </ol>
  3. <a href="#image-processing">Image Processing</a>
     <ol style="list-style-type: none;">
@@ -64,14 +65,19 @@ VGA stands for Visual Graphics Array, and it is an interface to send information
     </section>
 <image src="https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/fcc8ff8beb741ebb41a7290043ae588f4ab5669c/assets/VGA_interface.png" height ="500px" width ="1000px" align = "center"/>
     </section>
+### <section id="resistor-combinations"> 2.4. Resistor combinations
+Resistors in VGA interface help determine color intensity by controlling analog voltage levels sent to a display. They form part of a digital-to-analog converter (DAC) that translates digital color data into specific voltages for red, green, and blue signals. The resistors create precise voltage levels, corresponding to different intensities for each color channel, allowing for accurate color reproduction on analog displays like VGA. In modern digital systems, this role is handled by digital circuits instead. The maximum voltage allowed is 0.7V for each of the colour channels. The voltage levels defined in our project are 0V, 0.175V, 0.35V and 0.7V. Thereby giving 4 ranges of indexing ie.e 0V for the first 32 colour values, 0.175V of the next 94 colour values, 0.35 for the next 64 colour values and the remaining 64 values at 0.7V.
+The comnination of resistors(1300 ohm and 680 ohm) that we have used generate 4 intensities of colours for each channel and in-turn thes combination of these colour channels result in various over colours there by resulting in 64 colours.
+    </section>
 ## <section id="image-processing">3. Image Processing
 Python is utilized to preprocess image data and prepare it for use with the FPGA. The scripts handle resizing images, converting color values to a 2-bit format, and generating COE files required for FPGA initialization.
 ### <section id="color-conversion">3.1. Image Processing and Color Conversion
 The script begins by opening an image file and ensuring it is in RGB mode. It then resizes the image to a standard resolution of 400x300 pixels, which aligns with the FPGA video card's display resolution. The script processes each pixel in the resized image, converting RGB color values to a 2-bit representation based on predefined intensity ranges. This conversion maps color intensities into four possible values, effectively reducing the color depth to 2 bits. The converted color values for the red, green, and blue channels are saved in separate text files.
+Pillow is a Python library for image processing used for image processing, which offers tools to open, manipulate, and save images in various formats. It supports tasks like resizing, cropping, filtering, and converting images and is easily installed with pip.
     </section>
     
 ###   <section id="coe-generation">3.2. COE File Generation
-Once the 2-bit values are generated, another part of the script reads these values from the text files and formats them into COE (Coefficient) files. COE files are used to initialize memory blocks in FPGA designs. The script writes the binary data into COE files, including radix information which specifies the type of data being loaded, which in this case is binary data. Each data value is separated by commas, with the final value followed by a semicolon to complete the file format.
+Once the 2-bit values are generated, another part of the script reads these values from the text files and formats them into COE (Coefficient) files. COE (Coefficient) files are text files used in FPGA design tools to specify initial values for memory elements like block RAMs or lookup tables. These files define data such as pixel values, coefficients for filters, or other constants in a format readable by synthesis tools. COE files help initialize memory content, ensuring that the FPGA starts with predefined data at power-up or reset. The script writes the binary data into COE files, including radix information which specifies the type of data being loaded, which in this case is binary data. Each data value is separated by commas, with the final value followed by a semicolon to complete the file format.
     </section>
     
 ###  <section id="merging-coe">3.3. Merging COE Files
@@ -108,11 +114,12 @@ The Binary Loader Module is responsible for managing the retrieval of image data
 
 <b>Interpolation</b>: During frame switching, the k variable is used for nearest neighbor interpolation, which is a technique that adjusts pixel values by mapping each pixel in the output image to the nearest pixel in the source image. By using the k variable, the algorithm calculates the nearest neighboring pixel from the source image to determine the color value for each pixel in the output image. This approach allows the image to be resized efficiently, maintaining its quality and aspect ratio while adapting to different display resolutions. Nearest neighbor interpolation with the k variable ensures that pixel values are scaled and mapped appropriately with minimal computational complexity.
 
-The pixel data is only provided when h_sync and v_sync are within the given parameters, which here are 800 for h_sync and 600 for v_sync, whereas all the other times, the output is "00"
+The pixel data is only provided when h_sync and v_sync are within the given parameters, which here are 800 for h_sync and 600 for v_sync, whereas all the other times, the output is "00".
     </section>
     
 ### <section id= "#memory-modules"> 4.3. Memory Modules
-The FPGA design incorporates dedicated memory modules for efficiently storing and accessing color data used in VGA output.These ROM modules are accessed sequentially during each pixel update cycle. When the VGA output needs to be refreshed, the FPGA reads the appropriate color values from these modules based on the current pixel coordinates. This ensures that the correct RGB values are provided to the VGA interface, allowing for accurate color representation on the screen.
+Block RAMs (BRAMs) in FPGAs are dedicated memory blocks embedded within the FPGA fabric. They provide fast, on-chip storage that can be used for various applications like data buffering, caching, storing coefficients, or implementing small memories and lookup tables. BRAMs are highly configurable in terms of size, width, and depth, allowing designers to optimize them for specific tasks. 
+The FPGA design incorporates dedicated memory modules for efficiently storing and accessing color data used in VGA output.These ROM modules are accessed sequentially during each pixel update cycle. When the VGA output needs to be refreshed, the FPGA reads the appropriate color values from these modules based on the current pixel coordinates. This ensures that the correct RGB values are provided to the VGA interface, allowing for accurate color representation on the screen. The number of BRAM tiles utilised are 90% i.e. 45/50, Hence maximum usage of the BRAM is done.
     </section>
 </section>
 
