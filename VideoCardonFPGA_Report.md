@@ -62,7 +62,7 @@ Building a video card is a complex task that involves handling data quickly and 
 ###   <section id="vga-interface">2.3. What is a VGA interface?
 VGA stands for Visual Graphics Array, and it is an interface to send information about the image from a computer’s video card to the monitor. VGA connectors are typically blue and have 15 pins arranged in three rows. This connector transmits the video signals from the computer to the monitor. Most of the pins used in the VGA are ground pins, but the pins we are most concerned with are the RGB pins (3 separate pins for red, green, and blue colors), as well as the horizontal and vertical sync pins. The RGB pins carry analog signals that provide information for the intensity of the red, green, and blue components of the image. By varying the voltage of each signal, different colors can be produced.The H_sync and V_sync signals synchronize the timing of the image data. H_sync signals the end of a line and the start of a new one, while V_sync signals the end of a frame and the beginning of a new one.
     </section>
-<image src="https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/4d2d692ae98da5941f9a89440eace8e84e77b490/TestBench/VGA_interface.png" height ="500px" width ="1000px" align = "center"/>
+<image src="https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/fcc8ff8beb741ebb41a7290043ae588f4ab5669c/assets/VGA_interface.png" height ="500px" width ="1000px" align = "center"/>
     </section>
 ## <section id="image-processing">3. Image Processing
 Python is utilized to preprocess image data and prepare it for use with the FPGA. The scripts handle resizing images, converting color values to a 2-bit format, and generating COE files required for FPGA initialization.
@@ -119,9 +119,9 @@ The FPGA design incorporates dedicated memory modules for efficiently storing an
 ## <section id= "#conclusion"> 5.Conclusion
 The development of a custom video card using the Arty A7 35T FPGA board has successfully demonstrated the versatility and power of FPGA technology in creating specialized hardware solutions. Through the integration of custom-built modules, including clock management, synchronization signal generation, and memory management, we created a robust system capable of handling image data efficiently. The use of Python for image preprocessing and COE file generation streamlined the workflow, ensuring that image data could be easily converted and loaded onto the FPGA.Below are a few images and GIFs that we have successfully displayed using the video-card
 
-<image align ="center" src = "https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/47e4bf3617dd593337a938011b06de0b30c88d08/TestBench/Nyaan_Cat.gif" height="600px" width = "1000px"/>
+<image align ="center" src = "https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/fcc8ff8beb741ebb41a7290043ae588f4ab5669c/assets/Nyaan_Cat.gif" height="600px" width = "1000px"/>
 
-<image align ="center" src = "https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/47e4bf3617dd593337a938011b06de0b30c88d08/TestBench/Lion_Image.jpg" height="600px" width = "1000px"/>
+<image align ="center" src = "https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/fcc8ff8beb741ebb41a7290043ae588f4ab5669c/assets/Lion_Image.jpg" height="600px" width = "1000px"/>
 
 This project has not only deepened our understanding of FPGA design and video processing but also highlighted the importance of a systematic approach to hardware development. The knowledge and skills gained from this project will serve as a solid foundation for future endeavors in digital design and FPGA-based development.
 </section>
