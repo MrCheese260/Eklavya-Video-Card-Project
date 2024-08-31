@@ -120,7 +120,7 @@ The FPGA design incorporates dedicated memory modules for efficiently storing an
 ## <section id= "#conclusion"> 5.Conclusion
 The development of a custom video card using the Arty A7 35T FPGA board has successfully demonstrated the versatility and power of FPGA technology in creating specialized hardware solutions. Through the integration of custom-built modules, including clock management, synchronization signal generation, and memory management, we created a robust system capable of handling image data efficiently. The use of Python for image preprocessing and COE file generation streamlined the workflow, ensuring that image data could be easily converted and loaded onto the FPGA.Below are a few images and GIFs that we have successfully displayed using the video-card
 
-<image align ="center" src = "https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/47e4bf3617dd593337a938011b06de0b30c88d08/TestBench/Nyaan_Cat.gif" height="600px" width = "800px"/>
+<image align ="center" src = "https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/47e4bf3617dd593337a938011b06de0b30c88d08/TestBench/Nyaan_Cat.gif" height="600px" width = "1000px"/>
 
 <image align ="center" src = "https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/47e4bf3617dd593337a938011b06de0b30c88d08/TestBench/Lion_Image.jpg" height="600px" width = "800px"/>
 
