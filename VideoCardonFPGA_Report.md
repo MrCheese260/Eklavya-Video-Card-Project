@@ -45,7 +45,8 @@ Resources such as the HDLbits website, the NANDLAND YouTube channel, and Chip Ve
     <li><b>Finalization</b>: Delete temporary files, check that the design works as intended, and make any performance-enhancing changes that are needed.</li>
 </ul>  
 </section>
-
+<image src="https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/bdb2fd686ad472c2055b1e2cb4db80d161c17baa/assets/Workflow_Flowchart.jpg" height ="500px" width ="1000px" align = "center"/>
+ 
 ## <section id="basics">2. Basics of the Project
 ###  <section id="fpgas"> 2.1. What are FPGAs?
 Unlike conventional microprocessors, which execute software instructions on set hardware architecture, Field-Programmable Gate Arrays (FPGAs) are semiconductor devices that can be electronically reprogrammed to perform nearly any function you need. This implies that you can use an FPGA to create your own digital logic.
