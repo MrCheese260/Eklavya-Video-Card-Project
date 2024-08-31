@@ -85,11 +85,11 @@ At the end of this whole process, we get 3 COE files, one for red values, one fo
 
 ## <section id="verilog-code">4. Verilog Code Overview
 ### <section id="top-module">4.1. Top Module (top.v)
-The Top Module orchestrates the FPGA’s overall operation and integrates various components.
+The Top Module orchestrates the FPGA’s overall operation and integrates various components.The top module does 4 main tasks
 
-<b>Clock Management</b>: Generates a secondary clock (new_clk) from the primary clock (clk). This secondary clock is used for VGA signal timing, ensuring proper synchronization with the VGA display.
+<b>Clock Management</b>: It generates a secondary clock (new_clk) from the primary clock (clk). This secondary clock is used for VGA signal timing, ensuring proper synchronization with the VGA display.
 
-<b>Synchronization Signal Generation</b>: Produces horizontal (h_sync_in) and vertical (v_sync_in) synchronization signals required for VGA output. These signals ensure that the image is correctly timed and displayed on the screen.
+<b>Synchronization Signal Generation</b>: The top module produces horizontal (h_sync_in) and vertical (v_sync_in) synchronization signals required for VGA output. These signals ensure that the image is correctly timed and displayed on the screen.
 
 <b>Pixel Counting</b>: Maintains counters (count and reset_count) to track pixel positions and manage frame updates. These counters are reset periodically to ensure that the image is displayed correctly over time.
 
