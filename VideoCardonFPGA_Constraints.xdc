@@ -52,7 +52,7 @@ set_property -dict { PACKAGE_PIN B11   IOSTANDARD LVCMOS33 } [get_ports { v_sync
 ## Pmod Header JB
 set_property -dict { PACKAGE_PIN E15   IOSTANDARD LVCMOS33 } [get_ports { red_out[0]}]; #IO_L11P_T1_SRCC_15 Sch=jb_p[1]
 set_property -dict { PACKAGE_PIN E16   IOSTANDARD LVCMOS33 } [get_ports { red_out[1]}]; #IO_L11N_T1_SRCC_15 Sch=jb_n[1]
-set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { red_out[2] }]; #IO_L12P_T1_MRCC_15 Sch=jb_p[2]
+#set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { red_out[2] }]; #IO_L12P_T1_MRCC_15 Sch=jb_p[2]
 #set_property -dict { PACKAGE_PIN C15   IOSTANDARD LVCMOS33 } [get_ports { gre }]; #IO_L12N_T1_MRCC_15 Sch=jb_n[2]
 #set_property -dict { PACKAGE_PIN J17   IOSTANDARD LVCMOS33 } [get_ports { blu }]; #IO_L23P_T3_FOE_B_15 Sch=jb_p[3]
 #set_property -dict { PACKAGE_PIN J18   IOSTANDARD LVCMOS33 } [get_ports { jb[5] }]; #IO_L23N_T3_FWE_B_15 Sch=jb_n[3]
@@ -62,7 +62,7 @@ set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { red_ou
 ## Pmod Header JC
 set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { green_out[0] }]; #IO_L20P_T3_A08_D24_14 Sch=jc_p[1]
 set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { green_out[1] }]; #IO_L20N_T3_A07_D23_14 Sch=jc_n[1]
-set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { green_out[2] }]; #IO_L21P_T3_DQS_14 Sch=jc_p[2]
+#set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { green_out[2] }]; #IO_L21P_T3_DQS_14 Sch=jc_p[2]
 #set_property -dict { PACKAGE_PIN V11   IOSTANDARD LVCMOS33 } [get_ports { jc[3] }]; #IO_L21N_T3_DQS_A06_D22_14 Sch=jc_n[2]
 #set_property -dict { PACKAGE_PIN U14   IOSTANDARD LVCMOS33 } [get_ports { jc[4] }]; #IO_L22P_T3_A05_D21_14 Sch=jc_p[3]
 #set_property -dict { PACKAGE_PIN V14   IOSTANDARD LVCMOS33 } [get_ports { jc[5] }]; #IO_L22N_T3_A04_D20_14 Sch=jc_n[3]
@@ -72,7 +72,7 @@ set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { green_
 ## Pmod Header JD
 set_property -dict { PACKAGE_PIN D4    IOSTANDARD LVCMOS33 } [get_ports { blue_out[0] }]; #IO_L11N_T1_SRCC_35 Sch=jd[1]
 set_property -dict { PACKAGE_PIN D3    IOSTANDARD LVCMOS33 } [get_ports { blue_out[1] }]; #IO_L12N_T1_MRCC_35 Sch=jd[2]
-set_property -dict { PACKAGE_PIN F4    IOSTANDARD LVCMOS33 } [get_ports { blue_out[2] }]; #IO_L13P_T2_MRCC_35 Sch=jd[3]
+#set_property -dict { PACKAGE_PIN F4    IOSTANDARD LVCMOS33 } [get_ports { blue_out[2] }]; #IO_L13P_T2_MRCC_35 Sch=jd[3]
 #set_property -dict { PACKAGE_PIN F3    IOSTANDARD LVCMOS33 } [get_ports { jd[3] }]; #IO_L13N_T2_MRCC_35 Sch=jd[4]
 #set_property -dict { PACKAGE_PIN E2    IOSTANDARD LVCMOS33 } [get_ports { jd[4] }]; #IO_L14P_T2_SRCC_35 Sch=jd[7]
 #set_property -dict { PACKAGE_PIN D2    IOSTANDARD LVCMOS33 } [get_ports { jd[5] }]; #IO_L14N_T2_SRCC_35 Sch=jd[8]
