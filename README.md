@@ -27,12 +27,17 @@ cd /path_to_your_Makefile
 4. Select the .bin file generated during the synthesis and implementation step.
 5. Click "Program" to flash the design onto the FPGA.
 ### Mode 2:Steps for Flashing via QUAD SPI
-1.After synthesizing and implementing your design, click on the "Program and Debug" section in the Vivado Flow Navigator on the left and Select "Open Hardware Manager" to initiate the connection with the FPGA.
-2.In the Hardware Manager, click "Open Target" in the toolbar, then select "Auto Connect." Vivado will automatically detect your FPGA board.
-3.Click Add Configuration Memory Device under the Tools tab. This opens a wizard to select the memory device.
-4.Select your Quad SPI flash device from the list and click OK.
-5.A window will appear with options to select the files to program. Choose the .bin file generated during bitstream generation. Click "Program" to start the process. This writes the bitstream into the Quad SPI flash memory.
-6.Once programming is complete, reset or power cycle your FPGA. It should load the configuration from the Quad SPI flash automatically and start running the design.
+1.After synthesizing and implementing your design, click on the "Program and Debug" section in the Vivado Flow Navigator on the left and Select "Open Hardware Manager" to initiate the connection with the FPGA.<br />
+
+2.In the Hardware Manager, click "Open Target" in the toolbar, then select "Auto Connect." Vivado will automatically detect your FPGA board.<br />
+
+3.Click Add Configuration Memory Device under the Tools tab. This opens a wizard to select the memory device.<br />
+
+4.Select your Quad SPI flash device from the list and click OK.<br />
+
+5.A window will appear with options to select the files to program. Choose the .bin file generated during bitstream generation. Click "Program" to start the process. This writes the bitstream into the Quad SPI flash memory.<br />
+
+6.Once programming is complete, reset or power cycle your FPGA. It should load the configuration from the Quad SPI flash automatically and start running the design.<br />
 <hr>
 
 ## Contributors
