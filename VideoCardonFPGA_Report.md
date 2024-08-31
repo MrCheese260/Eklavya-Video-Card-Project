@@ -11,14 +11,6 @@ The input images provided to the video card are originally 400x300 in resolution
 
 The development of this project was supported by resources like the HDLbits website, the NANDLAND YouTube channel, and Chip Verify for learning Verilog. We were inspired to create this projet from Ben Eater's video, "The World's Worst Video Card."
 
-## Acknowledgement
-
-This project was brought to life thanks to the Eklavya mentorship program by SRA-VJTI, where continuous support and encouragement were provided at every stage. The availability of FPGA boards from SRA was essential, enabling us to explore and implement our ideas practically.
-
-Our mentors, Saish Karole and Atharv Patil, were crucial in guiding us through the project. Their expertise and practical advice helped us overcome challenges and achieve our objectives efficiently.
-
-The SRA-VJTI community provided a solid foundation for learning and problem-solving. Regular meetings and discussions with our mentors kept us on track and addressed any issues promptly. Additionally, we utilized Ben Eater's video as a valuable reference to guide our design and implementation.
-
 ## Contents
  1. <a href="#workflow">Workflow</a>
  2. <a href="#basics">Basics of the project</a>
@@ -42,6 +34,7 @@ The SRA-VJTI community provided a solid foundation for learning and problem-solv
     <li><a href="#memory-modules"> Memory Modules</a></li>
             </ol>
  5. <a href="#conclusion">Conclusion</a>
+ 6. <a href="#acknowledgement">Acknowledgement</a>
 
 ## <section id="workflow">1. Workflow 
 <ul>
@@ -132,3 +125,11 @@ The development of a custom video card using the Arty A7 35T FPGA board has succ
 
 This project has not only deepened our understanding of FPGA design and video processing but also highlighted the importance of a systematic approach to hardware development. The knowledge and skills gained from this project will serve as a solid foundation for future endeavors in digital design and FPGA-based development.
 </section>
+
+##  <section id= "#acknowledgement"> 6.Acknowledgement
+
+This project was brought to life thanks to the Eklavya mentorship program by SRA-VJTI, where continuous support and encouragement were provided at every stage. The availability of FPGA boards from SRA was essential, enabling us to explore and implement our ideas practically.
+
+Our mentors, Saish Karole and Atharv Patil, were crucial in guiding us through the project. Their expertise and practical advice helped us overcome challenges and achieve our objectives efficiently.
+
+The SRA-VJTI community provided a solid foundation for learning and problem-solving. Regular meetings and discussions with our mentors kept us on track and addressed any issues promptly. Additionally, we utilized Ben Eater's video as a valuable reference to guide our design and implementation.
