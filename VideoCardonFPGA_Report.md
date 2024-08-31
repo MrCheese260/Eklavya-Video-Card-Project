@@ -45,7 +45,7 @@ Resources such as the HDLbits website, the NANDLAND YouTube channel, and Chip Ve
     <li><b>Finalization</b>: Delete temporary files, check that the design works as intended, and make any performance-enhancing changes that are needed.</li>
 </ul>  
 </section>
-<image src="https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/159f3ee870a3841550c13b3ace609c047784da3b/assets/Flowhcart_workflow.png" height ="142px" width ="800px" align = "center"/>
+<image src="https://github.com/MrCheese260/Eklavya-Video-Card-Project/blob/159f3ee870a3841550c13b3ace609c047784da3b/assets/Flowhcart_workflow.png" height ="142px" width ="900px" align = "center"/>
  
 ## <section id="basics">2. Basics of the Project
 ###  <section id="fpgas"> 2.1. What are FPGAs?
