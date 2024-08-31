@@ -115,7 +115,7 @@ The pixel data is only provided when h_sync and v_sync are within the given para
 ### <section id= "#memory-modules"> 4.3. Memory Modules
 The FPGA design incorporates dedicated memory modules for efficiently storing and accessing color data used in VGA output.These ROM modules are accessed sequentially during each pixel update cycle. When the VGA output needs to be refreshed, the FPGA reads the appropriate color values from these modules based on the current pixel coordinates. This ensures that the correct RGB values are provided to the VGA interface, allowing for accurate color representation on the screen.
     </section>
-
+</section>
 ## <section id= "#conclusion">5.Conclusion
 The development of a custom video card using the Arty A7 35T FPGA board has successfully demonstrated the versatility and power of FPGA technology in creating specialized hardware solutions. Through the integration of custom-built modules, including clock management, synchronization signal generation, and memory management, we created a robust system capable of handling image data efficiently. The use of Python for image preprocessing and COE file generation streamlined the workflow, ensuring that image data could be easily converted and loaded onto the FPGA.Below are a few images and GIFs that we have successfully displayed using the video-card
 
