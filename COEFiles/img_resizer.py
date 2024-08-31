@@ -48,7 +48,7 @@ def generate_coe(input_file, output_file):
     
     # Write the COE file
     with open(output_file, 'w') as outfile:
-        # Write the radix information
+        # Write the radix information with a semicolon
         outfile.write(f"memory_initialization_radix={radix};\n")
         outfile.write("memory_initialization_vector=\n")
         
@@ -60,26 +60,39 @@ def generate_coe(input_file, output_file):
         outfile.write(f"{data[-1]};\n")
 
 def merge_and_update_coe(red1_file, green1_file, blue1_file, red2_file, green2_file, blue2_file):
-    def read_file(file_path):
+    def read_data_only(file_path):
         with open(file_path, 'r') as f:
-            return [line.strip() for line in f if line.strip()]
+            # Skip the first two lines (radix and vector declaration)
+            lines = f.readlines()[2:]
+            return [line.strip().rstrip(',;') for line in lines if line.strip()]
 
-    red2_data = read_file(red2_file)
-    green2_data = read_file(green2_file)
-    blue2_data = read_file(blue2_file)
+    red2_data = read_data_only(red2_file)
+    green2_data = read_data_only(green2_file)
+    blue2_data = read_data_only(blue2_file)
 
-    def append_data_to_file(base_file, data_file):
-        with open(base_file, 'r') as f:
+    def append_data_to_file(base_file, data_list):
+        with open(base_file, 'r+') as f:
             lines = f.readlines()
-        
-        with open(base_file, 'w') as f:
-            f.writelines([line.replace(';', ',') for line in lines])
-            with open(data_file, 'r') as df:
-                f.writelines(df.readlines())
+            # Find the line with the last data value (just before the semicolon)
+            last_line_index = len(lines) - 1
+            while not lines[last_line_index].strip().endswith(';'):
+                last_line_index -= 1
+            
+            # Remove the semicolon from the last data line
+            lines[last_line_index] = lines[last_line_index].replace(';', ',')
+            
+            # Add new data to the end, ensuring each new data is on its own line
+            for data in data_list[:-1]:
+                lines.append(f"{data},\n")
+            lines.append(f"{data_list[-1]};\n")
+            
+            # Rewrite the file
+            f.seek(0)
+            f.writelines(lines)
 
-    append_data_to_file(red1_file, red2_file)
-    append_data_to_file(green1_file, green2_file)
-    append_data_to_file(blue1_file, blue2_file)
+    append_data_to_file(red1_file, red2_data)
+    append_data_to_file(green1_file, green2_data)
+    append_data_to_file(blue1_file, blue2_data)
 
     print("COE files have been updated with data from the second image.")
 
