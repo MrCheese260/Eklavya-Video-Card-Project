@@ -42,9 +42,8 @@ The SRA-VJTI community provided a solid foundation for learning and problem-solv
             </ol>
  5. <a href="#conclusion">Conclusion</a>
 
-## <section id="workflow">1. Workflow of Project 
+## <section id="workflow">1. Workflow 
 <ul>
-    <li><b>Learning Resources</b>: Start by learning about clock dividers, focusing on tasks like converting a 100 MHz clock signal to 50 MHz. This foundational step is crucial for timing accuracy in your design.</li>
     <li><b>Sync Signal Development</b>: Write and verify H_sync and V_sync signals to ensure proper synchronization for VGA display.</li>
     <li><b>COE File Creation</b>: Use Python to create COE files from your processed image data, converting images into a format compatible with your FPGA's memory.</li>
     <li><b>FPGA Integration</b>: Load the COE files onto the FPGA and deploy the design, ensuring that the FPGA correctly interprets the data for display.</li>
