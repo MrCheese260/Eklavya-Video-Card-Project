@@ -2,6 +2,7 @@
 
 # Define variables for source files and Python interpreter
 PYTHON = python3
+
 SCRIPT = COEfile_generation.py  # Replace with the name of your Python file (regular space here)
 
 # Temporary files
