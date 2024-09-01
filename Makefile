@@ -2,7 +2,7 @@
 
 # Define variables for source files and Python interpreter
 PYTHON = python3
-SCRIPT = img_resizer.py  # Replace with the name of your Python file (regular space here)
+SCRIPT = COEfiles_generator.py  # Replace with the name of your Python file (regular space here)
 
 # Temporary files
 RED1_TEMP = red1_temp.txt
