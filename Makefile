@@ -35,8 +35,7 @@ install_pip:
 
 # Install required Python packages
 install_deps:
-	$(PYTHON) -m pip install --upgrade pip
-	$(PYTHON) -m pip install --upgrade Pillow
+	sudo apt install $(PYTHON)-pillow -y
 # Process images and generate COE files
 process_images:
 	$(PYTHON) $(SCRIPT)

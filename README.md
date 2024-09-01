@@ -9,7 +9,8 @@ Steps to run the make file:
 1. On your terminal, Navigate to the Directory Containing the Makefile: Use the cd command to go to the folder where your Makefile is located
 cd /path_to_your_Makefile
 2. Run the command “make” in your directory
-3. to clean all the file run the command “make clean”
+3. Demo input images has been added to run default to the COEfile_generation.py. To use the code to display user defined images, uncomment the input function and comment out the default input given below the input function
+4. to clean all the file run the command “make clean”
 ## Steps to Flash code on FPGA from Vivado
 1. Launch Vivado and open your project.
 2. Click on "Generate Bitstream" in the Flow Navigator on the left.
