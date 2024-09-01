@@ -117,8 +117,10 @@ def cleanup_files(files):
 # Main function to execute the entire process
 def main():
     # Prompt the user for file paths of the two images to process
-    image1_path = input("Enter the path to the first image file: ").strip().strip('"')
-    image2_path = input("Enter the path to the second image file: ").strip().strip('"')
+    #image1_path = input("Enter the path to the first image file: ").strip().strip('"')
+    #image2_path = input("Enter the path to the second image file: ").strip().strip('"')
+    image1_path = /Eklavya-Video-Card-Project/assets/NyanCat_Frame1.jpg; #Temporary variables and paths for example
+    image2_path = /Eklavya-Video-Card-Project/assets/NyanCat_Frame2.jpg;
     
     # Define temporary files for intermediate results
     red1_temp = 'red1_temp.txt'
